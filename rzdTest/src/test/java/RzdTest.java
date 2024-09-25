@@ -35,7 +35,7 @@ public class RzdTest {
         Assert.assertEquals(ticketPage.getHeader1(),"Выберите класс обслуживания");
     }
 /*
-Проверка хэддера на странице выбора мест
+Проверка хэддера на странице выбор мест
  */
     @Test
     public void RzdHeaderForSelectPlace(){
