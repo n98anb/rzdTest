@@ -13,7 +13,9 @@ public class RzdTest {
     public static String end = "Москва";
     public static String time = "20.09.2024";
 
-
+/*
+Сравнение количества доступных к покупке поездов на странице и их количество во вкладке "фильтр"
+ */
     @Test
     public void RzdTestNumberOfTrains(){
         MainPage mainPage = new MainPage(URL);
@@ -22,7 +24,9 @@ public class RzdTest {
                 mainPage.inputStartAndEnd(start, end, time).findAllTrains()),
                 searchPage.getNumberOfTrains());
     }
-
+/*
+Проверка хэддера на странице выбора класса обслуживания
+ */
     @Test
     public void RzdHeaderForSelectTicket(){
         MainPage mainPage = new MainPage(URL);
@@ -30,7 +34,9 @@ public class RzdTest {
         mainPage.inputStartAndEnd(start, end, time).openTicketPage();
         Assert.assertEquals(ticketPage.getHeader1(),"Выберите класс обслуживания");
     }
-
+/*
+Проверка хэддера на странице выбора мест
+ */
     @Test
     public void RzdHeaderForSelectPlace(){
         MainPage mainPage = new MainPage(URL);
@@ -38,7 +44,9 @@ public class RzdTest {
         mainPage.inputStartAndEnd(start, end, time).openTicketPage().openPlacePage();
         Assert.assertEquals(placePage.getHeader(),"Выберите до 9 мест или задайте параметры");
     }
-
+/*
+Проверка поп-апа если места не выбраны
+ */
     @Test
     public void RzdTextOfPopUp(){
         MainPage mainPage = new MainPage(URL);
